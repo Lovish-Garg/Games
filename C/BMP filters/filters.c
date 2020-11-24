@@ -1,4 +1,4 @@
-#include "structs.c"
+#include "structs.h"
 #include<math.h>
 
 // Convert image to sepia
@@ -60,7 +60,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-// Convert image to grayscale
+// Convert image to graysalce
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     float average;
