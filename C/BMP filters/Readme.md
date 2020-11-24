@@ -25,10 +25,10 @@ The build will give error but don't focuse on that
 
 then according to your system:
 if clang:
-./main -g courtyard.bmp out.bmp
+./main -g blur-stadium.bmp out.bmp
 
 if gcc:
-main.exe -g courtyard.bmp out.bmp
+main.exe -g blur-stadium.bmp out.bmp
 
 syntax:
 ./main -filter input.bmp output.bmp
