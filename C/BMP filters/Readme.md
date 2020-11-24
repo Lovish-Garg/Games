@@ -7,9 +7,13 @@ Using Command Line Arguments:
 
 Options for filters:
 -g for greyscale
+
 -r for reflect
+
 -e for edge detecion filter
+
 -s for sepia filter
+
 -b for blur filter
 
 Using:
