@@ -120,6 +120,11 @@ int main(int argc,  char *argv[])
         case 'r':
             reflect(height, width, image);
             break;
+
+        // Edge
+        case 'e':
+            edges(height, width, image);
+            break;
     }
 
     // Write outfile's BITMAPFILEHEADER

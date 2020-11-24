@@ -16,11 +16,15 @@ Using:
 After uploading all files , check that all files are in same directory or not.
 If you didnot created folder, then you donot need to think for this.
 
-then write in terminal:
-make main
+then build this file:
+The build will give error but don't focuse on that
 
-if no error comes then:
+then according to your system:
+if clang:
 ./main -g courtyard.bmp out.bmp
+
+if gcc:
+main.exe -g courtyard.bmp out.bmp
 
 syntax:
 ./main -filter input.bmp output.bmp
