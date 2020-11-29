@@ -9,8 +9,9 @@
 int x, y;// for snake
 int fruitx = 0, fruity = 0;// for fruit to be generated
 int gameEnd;// when the game should get terminate we will assign it the value of 0
-int flag = 10; // to keep track of which key was pressed
+int flag; // to keep track of which key was pressed
 int count;
+int score;
 
 char tailX[1000], tailY[1000];
 
@@ -23,7 +24,9 @@ void clear();
 int main(void)
 {
     l1:
+    score = 0;
     gameEnd = 1;
+    flag = 10;
     count = 0;
     place();
     while (gameEnd)
@@ -33,14 +36,17 @@ int main(void)
         Makelogic();  
     }
 
-    if (MessageBox(0, "Game End!\nPgoto l1;bress Retry to play Again", "Note", MB_RETRYCANCEL) == IDRETRY)
+    char temp[100];
+    sprintf(temp, "Score : %d\nPress Retry to play again", score);
+
+    int check = MessageBox(0, temp, "Note", MB_RETRYCANCEL);
+    
+    if (check == IDRETRY)
     {
         system("cls");
-        PostQuitMessage(0);
+        DestroyWindow(0);
         goto l1;
     }
-    clear();
-
 
     return 0;
 }
@@ -202,6 +208,7 @@ void Makelogic()
     if (x == fruitx && y == fruity)
     {
         fruit_position();
+        score += 10;
         count++;
     }
 }
