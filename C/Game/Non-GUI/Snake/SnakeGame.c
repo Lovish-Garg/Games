@@ -15,6 +15,7 @@ int score;
 
 char tailX[1000], tailY[1000];
 
+void hidecursor();
 void Makelogic();   
 void display();
 void place();
@@ -23,6 +24,7 @@ void clear();
 
 int main(void)
 {
+    hidecursor();
     l1:
     score = 0;
     gameEnd = 1;
@@ -221,3 +223,11 @@ void clear()// custom cls function so that no flikker occurs
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
+void hidecursor()
+{
+   HANDLE consoleHandle = GetStdHandle(STD_OUTPUT_HANDLE);
+   CONSOLE_CURSOR_INFO info;
+   info.dwSize = 100;
+   info.bVisible = FALSE;
+   SetConsoleCursorInfo(consoleHandle, &info);
+}
